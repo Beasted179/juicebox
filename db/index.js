@@ -7,12 +7,11 @@ const client = new Client({
   ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : undefined,
 });
 
-async function getAllUsers() {
+async function getAllUsers() {    
     const { rows } = await client.query(
       `SELECT id, username 
       FROM users;
     `);
-  
     return rows;
 }
 
