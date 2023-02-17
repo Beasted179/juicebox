@@ -60,7 +60,6 @@ usersRouter.post('/register', async (req, res, next) => {
 
   try {
     const _user = await getUserByUsername(username);
-
     if (_user) {
       next({
         name: 'UserExistsError',
